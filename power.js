@@ -47,33 +47,29 @@ when the corresponding buttons are clicked. You will need to use the
 `document.querySelectorAll()` method for these.
 */
 
-let allDisabled = document.querySelectorAll(".disabled");
+//Selects all elements with class of "power" and stores it in the variable power
+let powers = document.querySelectorAll(".power")
 
+//Function that adds the enabled class to items in powers
 let enableAll = () => {
-    for (let i = 0; i < allDisabled.length; i++) {
-        allDisabled[i].classList.toggle("enabled");
-        //allDisabled[i].classList.remove("disabled");
+    for (let i = 0; i < powers.length; i++) {
+        powers[i].classList.add("enabled");
+        powers[i].classList.remove("disabled");
     }
-
 }
 
+//Creates click event listen for the "activate all" button to enable all powers
 document.getElementById("activate-all").addEventListener("click", enableAll);
 
-
-let allEnabled = document.querySelectorAll(".enabled");
-
+//Function that adds the disabled class to items in powers
 let disableAll = () => {
-    for (let i = 0; i < allEnabled.length; i++) {
-        allEnabled[i].classList.toggle("disabled");
-        //allEnabled[i].classList.remove("enabled");
+    for (let i = 0; i < powers.length; i++) {
+        powers[i].classList.add("disabled");
+        powers[i].classList.remove("enabled");
     }
-
 }
-
+//Creates click event listen for the "deactivate all" button to enable all powers
 document.getElementById("deactivate-all").addEventListener("click", disableAll);
-
-
-
 
 
 
